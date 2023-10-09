@@ -12,7 +12,11 @@ namespace Ijustkeeptryingiguess.Controllers
         {
             _logger = logger;
         }
-
+        public IActionResult Sjekkliste()
+        {
+            var model = new CheckListViewModel();
+            return View(model);
+        }
         public IActionResult ServiceOrdre()
         {
             return View();
@@ -42,12 +46,7 @@ namespace Ijustkeeptryingiguess.Controllers
             return View();
 ;        }
 
-        public IActionResult Sjekkliste()
-
-        {
-            return View();
-        }
-
+        
         public IActionResult Privacy()
         {
             return View();
