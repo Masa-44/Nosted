@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Service Status Lookup";
+}
+
+<h1>Service Status Lookup</h1>
+
+<form asp-controller="Service" asp-action="CheckStatus" method="post">
+    <div class="form-group">
+        <label for="ReferenceNumber">Reference Number:</label>
+        <input type="text" id="ReferenceNumber" name="ReferenceNumber" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ContactEmail">Contact Email:</label>
+        <input type="email" id="ContactEmail" name="ContactEmail" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Check Status</button>
+</form>

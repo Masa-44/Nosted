@@ -1,9 +1,24 @@
 ﻿@{
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Simple Checklist";
 }
 
-<h1>Nøsted &</h1>
-<a href="/">Admin</a>
-<a href="/">Mekaniker</a>
-<a href="/">Hva mer skal vi ha?</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+
+    <ul>
+        <li>[ ] Task 1</li>
+        <li>[ ] Task 2</li>
+        <li>[ ] Task 3</li>
+    </ul>
+
+    <p>Completed by: __________________________</p>
+    <p>Date: ________________</p>
+</body>
+</html>
+
 

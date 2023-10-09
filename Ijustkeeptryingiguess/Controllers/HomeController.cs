@@ -13,7 +13,26 @@ namespace Ijustkeeptryingiguess.Controllers
             _logger = logger;
         }
 
+        public IActionResult ServiceOrdre()
+        {
+            return View();
+        }
+        public IActionResult Service()
+        {
+            return View();
+        }
+        public IActionResult Vaktliste()
+        {
+            return View();
+        }
+
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Lager()
+           
         {
             return View();
         }

@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Service Order Form";
+}
+
+<h1>Service Order Form</h1>
+
+<form asp-controller="Service" asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="CustomerName">Customer Name:</label>
+        <input type="text" id="CustomerName" name="CustomerName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ContactEmail">Contact Email:</label>
+        <input type="email" id="ContactEmail" name="ContactEmail" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ServiceType">Service Type:</label>
+        <select id="ServiceType" name="ServiceType" class="form-control" required>
+            <option value="Repair">Repair</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Installation">Installation</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Description:</label>
+        <textarea id="Description" name="Description" class="form-control" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Service Order</button>
+</form>
+
