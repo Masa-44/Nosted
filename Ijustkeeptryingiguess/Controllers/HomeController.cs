@@ -17,7 +17,7 @@ namespace Ijustkeeptryingiguess.Controllers
             var model = new CheckListViewModel();
             return View(model);
         }
-        public IActionResult ServiceOrdre()
+        public IActionResult NyServiceOrdre()
         {
             return View();
         }

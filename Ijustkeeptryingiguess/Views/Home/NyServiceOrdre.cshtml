@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ny Serviceordre</title>
+</head>
+<body>
+    <h1>Ny Serviceordre</h1>
+    <form action="submit_serviceordre.php" method="post">
+        <div style="display: flex;">
+            <div style="width: 50%; padding: 10px;">
+                <h2>Kundeinformasjon</h2>
+                <div class="form-group">
+                    <label for="fornavn">Fornavn:</label>
+                    <input type="text" id="fornavn" name="fornavn" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="etternavn">Etternavn:</label>
+                    <input type="text" id="etternavn" name="etternavn" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="mobil">Mobil No:</label>
+                    <input type="text" id="mobil" name="mobil" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="addresse">Adresse:</label>
+                    <input type="text" id="addresse" name="addresse" class="form-control">
+                </div>
+
+                <br />
+                <br />
+
+                <div class="form-group">
+                    <label for="feil_beskrivelse">Feil beskrivelse:</label>
+                    <textarea id="feil_beskrivelse" name="feil_beskrivelse" class="form-control" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div style="width: 50%; padding: 10px;">
+                <h2>Serviceordreinformasjon</h2>
+                <div class="form-group">
+                    <label for="bestillingsnummer">Bestillingsnummer:</label>
+                    <input type="text" id="bestillingsnummer" name="bestillingsnummer" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="produkttype">Produkttype:</label>
+                    <input type="text" id="produkttype" name="produkttype" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="serienummer">Serienummer:</label>
+                    <input type="text" id="serienummer" name="serienummer" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="dato">Mottatt dato:</label>
+                    <input type="date" id="dato" name="dato" class="form-control">
+                </div>
+
+                <br />
+
+                <div class="form-group" style="display: flex;">
+                    <label for="aarsmodell">Årsmodell:</label>
+                    <input type="text" id="aarsmodell" name="aarsmodell" class="form-control" style="width: 50%;">
+                </div>
+
+                <br />
+
+                <div class="form-group">
+                    
+                    <input type="checkbox" id="garanti" name="beskrivelse" value="Garanti">Garanti
+                    <input type="checkbox" id="service" name="beskrivelse" value="Service">Service
+                    <input type="checkbox" id="reperasjon" name="beskrivelse" value="Reparasjon">Reparasjon
+                </div>
+                <div class="form-group">
+                    <label for="kunde_kommentar">Kommentar fra kunde:</label>
+                    <textarea id="kunde_kommentar" name="kunde_kommentar" class="form-control" rows="4"></textarea>
+                </div>
+
+                <br />
+
+                <button type="submit" class="btn btn-primary">Opprett Serviceordre</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
