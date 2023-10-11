@@ -21,7 +21,7 @@ namespace Ijustkeeptryingiguess.Controllers
         {
             return View();
         }
-        public IActionResult Service()
+        public IActionResult AktiveServiceOrdre()
         {
             return View();
         }
