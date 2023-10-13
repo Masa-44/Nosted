@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<Ijustkeeptryingiguess.Models.ServiceOrdre>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +8,50 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    Willkommen, mein arbeiters!
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Serienummer</th>
+                <th>Fornavn</th>
+                <th>Etternavn</th>
+                <th>Mobil Nr</th>
+                <th>Email</th>
+                <th>Addresse</th>
+                <th>Feil beskrivelse</th>
+                <th>Bestillingsnummer</th>
+                <th>Produkttype</th>
+                <th>Mottatt dato</th>
+                <th>Årsmodell</th>
+                <th>Garanti</th>
+                <th>Service</th>
+                <th>Reperasjon</th>
+                <th>Kommentar fra kunde</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ServiceOrdre in Model)
+            {
+                <tr>
+                    <td>@ServiceOrdre.serienummer</td>
+                    <td>@ServiceOrdre.fornavn</td>
+                    <td>@ServiceOrdre.etternavn</td>
+                    <td>@ServiceOrdre.mobil</td>
+                    <td>@ServiceOrdre.email</td>
+                    <td>@ServiceOrdre.addresse</td>
+                    <td>@ServiceOrdre.feil_beskrivelse</td>
+                    <td>@ServiceOrdre.bestillingsnummer</td>
+                    <td>@ServiceOrdre.produkttype</td>
+                    <td>@ServiceOrdre.dato</td>
+                    <td>@ServiceOrdre.aarsmodell</td>
+                    <td>@ServiceOrdre.Garanti</td>
+                    <td>@ServiceOrdre.Service</td>
+                    <td>@ServiceOrdre.Reparasjon</td>
+                    <td>@ServiceOrdre.kunde_kommentar</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>
 

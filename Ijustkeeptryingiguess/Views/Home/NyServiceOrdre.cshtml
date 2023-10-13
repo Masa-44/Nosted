@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@model Ijustkeeptryingiguess.Models.ServiceOrdre
+<!DOCTYPE html>
 <html>
 <head>
     <title>Ny Serviceordre</title>
 </head>
 <body>
     <h1>Ny Serviceordre</h1>
-    <form action="submit_serviceordre.php" method="post">
+    <form asp-action="submit_serviceordre" method="post">
         <div style="display: flex;">
             <div style="width: 50%; padding: 10px;">
                 <h2>Kundeinformasjon</h2>
