@@ -6,11 +6,20 @@ namespace Ijustkeeptryingiguess.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ServiceOrdreRepository _repository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ServiceOrdreRepository repository)
         {
-            _logger = logger;
+            _repository = repository;
+        }
+
+        public IActionResult Index()
+        {
+            // Fetch data from the repository
+            var serviceOrdreList = _repository.GetAll(); // Replace this with your actual method to fetch data
+
+            // Pass the data to the view
+            return View(serviceOrdreList);
         }
         public IActionResult Sjekkliste()
         {
@@ -29,14 +38,8 @@ namespace Ijustkeeptryingiguess.Controllers
         {
             return View();
         }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult Lager()
-           
+
         {
             return View();
         }
@@ -44,21 +47,17 @@ namespace Ijustkeeptryingiguess.Controllers
         public IActionResult Produkter()
         {
             return View();
-;        }
-
-        
-        public IActionResult Privacy()
-        {
-            return View();
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult NyServiceOrdre(ServiceOrdre serviceordre)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (ModelState.IsValid)
+            {
+                _repository.Insert(serviceordre);
+                return RedirectToAction("Index");
+            }
+            return View(serviceordre);
         }
-
-
-       
     }
 }
