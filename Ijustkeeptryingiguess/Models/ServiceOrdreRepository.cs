@@ -41,8 +41,8 @@ namespace Ijustkeeptryingiguess.Models
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                dbConnection.Execute(@"INSERT INTO serviceordre (Serienummer, Etternavn, MobilNo, Email, Adresse, FeilBeskrivelse, Bestillingsnummer, Produkttype, Fornavn, MottattDato, Årsmodell, Garanti, Service, Reparasjon, KommentarFraKunde)
-                VALUES (@Serienummer, @Etternavn, @MobilNo, @Email, @Adresse, @FeilBeskrivelse, @Bestillingsnummer, @Produkttype, @Fornavn, @MottattDato, @Årsmodell, @Garanti, @Service, @Reparasjon, @KommentarFraKunde);");
+                dbConnection.Execute(@"INSERT INTO serviceordre (serienummer, fornavn, etternavn, mobil, email, addresse, feil_beskrivelse, bestillingsnummer, produkttype, dato, aarsmodell, Garanti, Service, Reparasjon, kunde_kommentar)
+                VALUES (@serienummer, @fornavn, @etternavn, @mobil, @email, @addresse, @feil_beskrivelse, @bestillingsnummer, @produkttype, @dato, @aarsmodell, @Garanti, @Service, @Reparasjon, @kunde_kommentar)");
             }
 
         }

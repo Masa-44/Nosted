@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Ny Serviceordre</h1>
-    <form asp-action="submit_serviceordre" method="post">
+    <form asp-action="NyServiceOrdre" method="post">
         <div style="display: flex;">
             <div style="width: 50%; padding: 10px;">
                 <h2>Kundeinformasjon</h2>
@@ -69,11 +69,19 @@
                 <br />
 
                 <div class="form-group">
-                    
-                    <input type="checkbox" id="garanti" name="beskrivelse" value="Garanti">Garanti
-                    <input type="checkbox" id="service" name="beskrivelse" value="Service">Service
-                    <input type="checkbox" id="reperasjon" name="beskrivelse" value="Reparasjon">Reparasjon
+                    <label for="garanti">Garanti:</label>
+                    <input type="checkbox" id="garanti" name="Garanti" value="true">
                 </div>
+                <div class="form-group">
+                    <label for="service">Service:</label>
+                    <input type="checkbox" id="service" name="Service" value="true">
+                </div>
+                <div class="form-group">
+                    <label for="reparasjon">Reparasjon:</label>
+                    <input type="checkbox" id="reparasjon" name="Reparasjon" value="true">
+                </div>
+
+
                 <div class="form-group">
                     <label for="kunde_kommentar">Kommentar fra kunde:</label>
                     <textarea id="kunde_kommentar" name="kunde_kommentar" class="form-control" rows="4"></textarea>
