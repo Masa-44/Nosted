@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Data;
+using System.Diagnostics;
 using Ijustkeeptryingiguess.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,6 +49,7 @@ namespace Ijustkeeptryingiguess.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult NyServiceOrdre(ServiceOrdre serviceordre)
@@ -59,5 +61,7 @@ namespace Ijustkeeptryingiguess.Controllers
             }
             return View(serviceordre);
         }
+
+
     }
 }

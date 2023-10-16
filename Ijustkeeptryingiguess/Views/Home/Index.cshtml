@@ -11,6 +11,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>id</th>
                 <th>Serienummer</th>
                 <th>Fornavn</th>
                 <th>Etternavn</th>
@@ -32,6 +33,7 @@
             @foreach (var serviceordre in Model)
             {
                 <tr>
+                    <td>@serviceordre.id</td>
                     <td>@serviceordre.serienummer</td>
                     <td>@serviceordre.fornavn</td>
                     <td>@serviceordre.etternavn</td>

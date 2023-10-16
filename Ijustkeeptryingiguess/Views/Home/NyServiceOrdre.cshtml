@@ -6,10 +6,18 @@
 </head>
 <body>
     <h1>Ny Serviceordre</h1>
-    <form asp-action="NyServiceOrdre" method="post">
+    <form asp-action="NyServiceOrdre" method="POST">
         <div style="display: flex;">
             <div style="width: 50%; padding: 10px;">
                 <h2>Kundeinformasjon</h2>
+                <div class="form-group">
+                    <label for="id">Id for serviceordren</label>
+                    <input type="text" id="id" name="id" class="form-control" readonly placeholder="Auto generated">
+                </div>
+                <div class="form-group">
+                    <label for="serienummer">Serienummer:</label>
+                    <input type="text" id="serienummer" name="serienummer" class="form-control">
+                </div>
                 <div class="form-group">
                     <label for="fornavn">Fornavn:</label>
                     <input type="text" id="fornavn" name="fornavn" class="form-control">
@@ -51,47 +59,34 @@
                     <input type="text" id="produkttype" name="produkttype" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="serienummer">Serienummer:</label>
-                    <input type="text" id="serienummer" name="serienummer" class="form-control">
-                </div>
-                <div class="form-group">
                     <label for="dato">Mottatt dato:</label>
                     <input type="date" id="dato" name="dato" class="form-control">
                 </div>
-
-                <br />
-
                 <div class="form-group" style="display: flex;">
                     <label for="aarsmodell">Årsmodell:</label>
                     <input type="text" id="aarsmodell" name="aarsmodell" class="form-control" style="width: 50%;">
                 </div>
-
-                <br />
-
                 <div class="form-group">
-                    <label for="garanti">Garanti:</label>
-                    <input type="checkbox" id="garanti" name="Garanti" value="true">
+                    <label for="Garanti">Garanti:</label>
+                    <input type="checkbox" id="Garanti" name="Garanti" value="true">
                 </div>
                 <div class="form-group">
-                    <label for="service">Service:</label>
-                    <input type="checkbox" id="service" name="Service" value="true">
+                    <label for="Service">Service:</label>
+                    <input type="checkbox" id="Service" name="Service" value="true">
                 </div>
                 <div class="form-group">
-                    <label for="reparasjon">Reparasjon:</label>
-                    <input type="checkbox" id="reparasjon" name="Reparasjon" value="true">
+                    <label for="Reparasjon">Reparasjon:</label>
+                    <input type="checkbox" id="Reparasjon" name="Reparasjon" value="true">
                 </div>
-
-
                 <div class="form-group">
                     <label for="kunde_kommentar">Kommentar fra kunde:</label>
                     <textarea id="kunde_kommentar" name="kunde_kommentar" class="form-control" rows="4"></textarea>
                 </div>
-
                 <br />
-
                 <button type="submit" class="btn btn-primary">Opprett Serviceordre</button>
             </div>
         </div>
     </form>
+
 </body>
 </html>

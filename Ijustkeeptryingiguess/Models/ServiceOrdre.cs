@@ -3,7 +3,8 @@
 namespace Ijustkeeptryingiguess.Models
 {
     public class ServiceOrdre
-    {
+    {   
+        public int id { get; set; }
         public string? serienummer { get; set; }
 
         public string? fornavn { get; set; }
@@ -16,9 +17,9 @@ namespace Ijustkeeptryingiguess.Models
         public string? produkttype { get; set; }
         public DateTime? dato { get; set; }
         public int? aarsmodell { get; set; }
-        public bool? Garanti { get; set; }
-        public bool? Service { get; set; }
-        public bool? Reparasjon { get; set; }
+        public bool Garanti { get; set; }
+        public bool Service { get; set; }
+        public bool Reparasjon { get; set; }
         public string? kunde_kommentar { get; set; }
     }
 }
