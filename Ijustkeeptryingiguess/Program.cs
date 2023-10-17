@@ -53,8 +53,22 @@ namespace Ijustkeeptryingiguess
                         appBuilder.UseRouting();
                         appBuilder.UseAuthorization();
 
+                        /*appBuilder.UseEndpoints(endpoints =>
+                        {
+                            endpoints.MapControllerRoute(
+                                name: "default",
+                                pattern: "{controller=Home}/{action=Index}/{id?}");
+                        });*/
+
                         appBuilder.UseEndpoints(endpoints =>
                         {
+                            // Custom Route
+                            endpoints.MapControllerRoute(
+                            name: "customRoute",
+                            pattern: "custom/nyserviceordre", // Adjust the route pattern to your needs
+                            defaults: new { controller = "Home", action = "NyServiceOrdre" });
+
+                            // Default Route
                             endpoints.MapControllerRoute(
                                 name: "default",
                                 pattern: "{controller=Home}/{action=Index}/{id?}");
