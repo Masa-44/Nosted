@@ -52,9 +52,9 @@ namespace Ijustkeeptryingiguess.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult NyServiceOrdre(ServiceOrdre serviceordre)
+        public IActionResult PostService(ServiceOrdre serviceordre)
         {
-            if (ModelState.IsValid)
+            if (true)
             {
                 _repository.Insert(serviceordre);
                 return RedirectToAction("Index");

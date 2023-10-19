@@ -21,10 +21,7 @@ namespace Ijustkeeptryingiguess.Models
 
         public IDbConnection Connection
         {
-            get
-            {
-                return new MySqlConnection(_config.GetConnectionString("DefaultConnection"));
-            }
+            get { return new MySqlConnection(_config.GetConnectionString("DefaultConnection")); }
         }
 
         public IEnumerable<ServiceOrdre> GetAll()
@@ -41,10 +38,10 @@ namespace Ijustkeeptryingiguess.Models
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                dbConnection.Execute(@"INSERT INTO serviceordre (id, serienummer, fornavn, etternavn, mobil, email, addresse, feil_beskrivelse, bestillingsnummer, produkttype, dato, aarsmodell, Garanti, Service, Reparasjon, kunde_kommentar)
+                dbConnection.Execute(
+                    @"INSERT INTO serviceordre (id, serienummer, fornavn, etternavn, mobil, email, addresse, feil_beskrivelse, bestillingsnummer, produkttype, dato, aarsmodell, Garanti, Service, Reparasjon, kunde_kommentar)
                 VALUES (@id, @serienummer, @fornavn, @etternavn, @mobil, @email, @addresse, @feil_beskrivelse, @bestillingsnummer, @produkttype, @dato, @aarsmodell, @Garanti, @Service, @Reparasjon, @kunde_kommentar)");
             }
-
         }
     }
 }
