@@ -39,9 +39,43 @@ namespace Ijustkeeptryingiguess.Models
             {
                 dbConnection.Open();
                 dbConnection.Execute(
-                    @"INSERT INTO serviceordre (id, serienummer, fornavn, etternavn, mobil, email, addresse, feil_beskrivelse, bestillingsnummer, produkttype, dato, aarsmodell, Garanti, Service, Reparasjon, kunde_kommentar)
-                VALUES (@id, @serienummer, @fornavn, @etternavn, @mobil, @email, @addresse, @feil_beskrivelse, @bestillingsnummer, @produkttype, @dato, @aarsmodell, @Garanti, @Service, @Reparasjon, @kunde_kommentar)");
+                    @"INSERT INTO serviceordre (
+                 Serienummer,
+                 Fornavn,
+                 Etternavn,
+                 Mobil,
+                 Email,
+                 Addresse,
+                 Feil_beskrivelse,
+                 Bestillingsnummer,
+                 Produkttype,
+                 Dato,
+                 Aarsmodell,
+                 Garanti,
+                 Service,
+                 Reparasjon,
+                 Kunde_kommentar
+             )
+             VALUES (
+                 @Serienummer,
+                 @Fornavn,
+                 @Etternavn,
+                 @Mobil,
+                 @Email,
+                 @Addresse,
+                 @Feil_beskrivelse,
+                 @Bestillingsnummer,
+                 @Produkttype,
+                 @Dato,
+                 @Aarsmodell,
+                 @Garanti,
+                 @Service,
+                 @Reparasjon,
+                 @Kunde_kommentar
+             )", 
+                    serviceordre);
             }
         }
+
     }
 }

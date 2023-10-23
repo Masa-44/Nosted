@@ -16,11 +16,7 @@ namespace Ijustkeeptryingiguess.Controllers
 
         public IActionResult Index()
         {
-            // Fetch data from the repository
-            var serviceOrdreList = _repository.GetAll(); // Replace this with your actual method to fetch data
-
-            // Pass the data to the view
-            return View(serviceOrdreList);
+            return View();
         }
         public IActionResult Sjekkliste()
         {
@@ -33,7 +29,11 @@ namespace Ijustkeeptryingiguess.Controllers
         }
         public IActionResult AktiveServiceOrdre()
         {
-            return View();
+            // Fetch data from the repository
+            var serviceOrdreList = _repository.GetAll(); // Replace this with your actual method to fetch data
+
+            // Pass the data to the view
+            return View(serviceOrdreList);
         }
         public IActionResult Vaktliste()
         {
@@ -54,12 +54,10 @@ namespace Ijustkeeptryingiguess.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult PostService(ServiceOrdre serviceordre)
         {
-            if (true)
-            {
+            
                 _repository.Insert(serviceordre);
-                return RedirectToAction("Index");
-            }
-            return View(serviceordre);
+                return RedirectToAction("AktiveServiceOrdre");
+           
         }
 
 

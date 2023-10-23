@@ -1,82 +1,57 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@model IEnumerable<Ijustkeeptryingiguess.Models.ServiceOrdre>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aktive Serviceordre</title>
 </head>
 <body>
-    <h1>Ikke påbegynte Serviceordre</h1>
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
             <tr>
+                <th>Id</th>
+                <th>Serienummer</th>
+                <th>Fornavn</th>
+                <th>Etternavn</th>
+                <th>Mobil Nr</th>
+                <th>Email</th>
+                <th>Addresse</th>
+                <th>Feil beskrivelse</th>
                 <th>Bestillingsnummer</th>
                 <th>Produkttype</th>
-                <th>Mottatt Dato</th>
-                <th>Feil Beskrivelse</th>
+                <th>Mottatt dato</th>
+                <th>Årsmodell</th>
+                <th>Garanti</th>
+                <th>Service</th>
+                <th>Reperasjon</th>
+                <th>Kommentar fra kunde</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>12345</td>
-                <td>Vinsj</td>
-                <td>2023-10-15</td>
-                <td>Maskinen er støyende og trenger vedlikehold.</td>
-            </tr>
-            <!-- Add more rows for other active serviceordre using a loop or dynamic data -->
-        </tbody>
-    </table>
-
-    <h1>Påbegynte Serviceordre</h1>
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Bestillingsnummer</th>
-                <th>Produkttype</th>
-                <th>Mottatt Dato</th>
-                <th>Feil Beskrivelse</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>12345</td>
-                <td>Vinsj</td>
-                <td>2023-10-15</td>
-                <td>Maskinen er støyende og trenger vedlikehold.</td>
-            </tr>
-            <!-- Add more rows for other active serviceordre using a loop or dynamic data -->
-        </tbody>
-    </table>
-
-    <br />
-    <br />
-
-
-
-
-
-
-
-    <h1>Fullførte Serviceordre</h1>
-
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Bestillingsnummer</th>
-                <th>Produkttype</th>
-                <th>Mottatt Dato</th>
-                <th>Feil Beskrivelse</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>12345</td>
-                <td>Vinsj</td>
-                <td>2023-10-15</td>
-                <td>Maskinen er støyende og trenger vedlikehold.</td>
-            </tr>
-            <!-- Add more rows for other active serviceordre using a loop or dynamic data -->
+            @foreach (var serviceordre in Model)
+            {
+                <tr>
+                    <td>@serviceordre.Id</td>
+                    <td>@serviceordre.Serienummer</td>
+                    <td>@serviceordre.Fornavn</td>
+                    <td>@serviceordre.Etternavn</td>
+                    <td>@serviceordre.Mobil</td>
+                    <td>@serviceordre.Email</td>
+                    <td>@serviceordre.Addresse</td>
+                    <td>@serviceordre.Feil_beskrivelse</td>
+                    <td>@serviceordre.Bestillingsnummer</td>
+                    <td>@serviceordre.Produkttype</td>
+                    <td>@serviceordre.Dato</td>
+                    <td>@serviceordre.Aarsmodell</td>
+                    <td>@serviceordre.Garanti</td>
+                    <td>@serviceordre.Service</td>
+                    <td>@serviceordre.Reparasjon</td>
+                    <td>@serviceordre.Kunde_kommentar</td>
+                    </tr>
+            }
         </tbody>
     </table>
 </body>
 </html>
+

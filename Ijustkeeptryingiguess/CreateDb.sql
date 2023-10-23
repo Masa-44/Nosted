@@ -2,23 +2,23 @@
 create database if not exists nosted_app;
 use nosted_app;
 CREATE TABLE IF NOT EXISTS serviceordre (
- serienummer VARCHAR(50) PRIMARY KEY,
-        fornavn VARCHAR(255),
-        etternavn VARCHAR(20),
-        mobil VARCHAR(255),
-        email VARCHAR(255),
-        addresse VARCHAR(255),
-        feil_beskrivelse TEXT,
-        bestillingsnummer VARCHAR(255),
-        produkttype VARCHAR(255),
-        dato DATE,
-        aarsmodell INT,
+        Id INT PRIMARY KEY AUTO_INCREMENT, 
+        Serienummer VARCHAR(50),
+        Fornavn VARCHAR(255),
+        Etternavn VARCHAR(20),
+        Mobil VARCHAR(255),
+        Email VARCHAR(255),
+        Addresse VARCHAR(255),
+        Feil_beskrivelse TEXT,
+        Bestillingsnummer VARCHAR(255),
+        Produkttype VARCHAR(255),
+        Dato DATE,
+        Aarsmodell INT,
         Garanti BOOLEAN,
         Service BOOLEAN,
         Reparasjon BOOLEAN,
-        kunde_kommentar TEXT
+        Kunde_kommentar TEXT
 );
-
 
 
 /*create table if not EXISTS AspNetRoles
