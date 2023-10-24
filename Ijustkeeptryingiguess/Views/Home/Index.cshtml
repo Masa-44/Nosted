@@ -1,25 +1,29 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<Ijustkeeptryingiguess.Models.ServiceOrdre>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+        .header1 {
+            display: flex;
+            justify-content: center; /* horizontally center */
+            align-items: center;     /* vertically center (if you want) */
+        }
+    
+        .header1 h1 {
+            color: red;
+            text-align: center;      /* ensures the text itself is centered */
+        }
+    </style>
+    
+    
 </head>
 <body>
-    <nav>
-        <div class="logo">Nøsted &</div>
-        <div class="nav-items">
-            <a href="@Url.Action("Produkter", "Home")">Produkter</a>
-          
-
-            <a href="@Url.Action("Sjekkliste", "Home")">Sjekkliste</a>
-            <a href="@Url.Action("Lager", "Home")">Lager</a>
-            <a href="@Url.Action("Vaktliste", "Home")">Vaktliste</a>
-            <a href="@Url.Action("Service", "Home")">Service</a> 
-            <a href="@Url.Action("ServiceOrdre", "Home")">ServiceOrdre</a>
-        </div>
-    </nav>
+<div class="header1">
+<h1>Willkommen</h1>
+</div>
 </body>
 </html>
 

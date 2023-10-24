@@ -39,6 +39,10 @@
             padding: 20px;
             margin-top: 20px;
         }
+
+       .id {
+            background-color: #3E3F40;
+       }
     </style>
 </head>
 <body>
@@ -53,9 +57,6 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Produkter">Produkter</a>
                         </li>
                         <li class="nav-item">
@@ -65,13 +66,13 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Vaktliste">Vaktliste</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Service">Service</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="NyServiceordre">Ny Serviceordre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AktiveServiceOrdre">Aktive Serviceordre</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Sjekkliste">Sjekkliste</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ServiceOrdre">ServiceOrdre</a>
                         </li>
                     </ul>
                 </div>
