@@ -20,6 +20,38 @@ CREATE TABLE IF NOT EXISTS serviceordre (
         Kunde_kommentar TEXT
 );
 
+CREATE OR REPLACE TABLE mekanisk(
+    mek_id SMALLINT AUTO_INCREMENT PRIMARY KEY,
+    c_lameller_slitasje VARCHAR(20),
+    bremser_band_p VARCHAR(20),
+    lager_trommel VARCHAR(20),
+     pto_opplagring VARCHAR(20),
+     kjedestrammer VARCHAR(20),
+     wire VARCHAR(20),
+     pinion_lager VARCHAR(20),
+     kile_kjedehjul VARCHAR(20)
+);
+
+CREATE OR REPLACE TABLE hydraulisk(
+    hyd_id SMALLINT AUTO_INCREMENT PRIMARY KEY,
+    hydraulisk_syl_lek VARCHAR(20),
+    slanger_skader_lek VARCHAR(20),
+    t_hyd_testbenk VARCHAR(20),
+     skift_olje_tank VARCHAR(20),
+     skift_olje_girboks VARCHAR(20),
+     ring_open_skift_t VARCHAR(20),
+     bremse_syl_open_skift VARCHAR(20)
+);
+
+CREATE OR REPLACE TABLE elektro(
+    elektro_id SMALLINT AUTO_INCREMENT PRIMARY KEY,
+    led_nett_vinsj VARCHAR(20),
+    sjekk_t_radio VARCHAR(20),
+    sjekk_t_knappekasser VARCHAR(20)
+
+);
+
+
 
 /*create table if not EXISTS AspNetRoles
 (
