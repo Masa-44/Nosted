@@ -2,8 +2,8 @@ Nøsted & forenklet kodeguide.
 
 Oppbygning:
 
-Lib:
-inneholder tredjeparti pakker eller biblioteker som Java, CSS. Her bygges rammeverket for koden. Et eksempel på Lib er CSS filen som er med på å forme nettsiden som blant annet bakgrunnshøyde/bredde, farger og stil. En layout. 
+wwwroot:
+er wwwroot-mappen en spesiell mappe som spiller en betydelig rolle i å servere statiske filer, som HTML, CSS, JavaScript, bilder og andre klient-sideressurser til webklienter (nettlesere).
 Actual eksempel:
 Site CSS fil 
 Site.CSS inneholder oppbygningen av nettsidens layout og farger. Her finnes det blant annet Hover options som gjør at knapper på nettsiden lyser når musen kjøres over dem. Her bestemmes også høyden og bredden. Koden her definerer layouten og begrensningene på nettsiden. 
@@ -85,7 +85,9 @@ Koden viser en nettside med headeren “Wilkommen” på midten av siden og just
 
 Oppsumering:
 
-Lib: Dette er stedet der tredjeparts biblioteker og pakker blir inkludert for å bygge rammeverket for koden. For eksempel, CSS-filer som styrer nettsidens utseende og oppførsel. Det kan inkludere stilregler som definerer layout og farger, samt spesielle effekter som hover-effekter for knapper.
+wwwroot: Dette er stedet der tredjeparts biblioteker og pakker blir inkludert for å bygge rammeverket for koden. For eksempel, CSS-filer som styrer nettsidens utseende og oppførsel. Det kan inkludere stilregler som definerer layout og farger, samt spesielle effekter som hover-effekter for knapper. wwwroot-mappen spiller en betydelig rolle i å servere statiske filer, som HTML, CSS, JavaScript, bilder, og andre klient-sideressurser til webklienter (nettlesere). Den brukes til å lagre offentlige eller offentlig tilgjengelige filer som er tilgjengelige for offentligheten via URL-er.
+Dette er hvordan wwwroot-mappen bidrar til webutviklingsprosjektet, spesielt når det gjelder klient-sideressurser og presentasjon av nettstedets innhold og utseende.
+
 
 Controllers: Dette er hvor du definerer interaksjonene mellom objekter, vanligvis i form av metoder. Controller-metodene styrer hvordan nettsiden fungerer, for eksempel ved å bestemme hvordan knapper fører til forskjellige deler av nettsiden.
 
@@ -94,3 +96,4 @@ Models: Modellene gir strukturen for dataen som skal behandles i applikasjonen. 
 Views: Views er ansvarlige for å vise innholdet på skjermen for brukeren. Dette er HTML-templater som bestemmer hvordan sidene ser ut. De inneholder elementer som overskrifter (<h1>), tittelen på siden (<title>), og formateringsregler som styrer layout og utseende.
 
 Hver av disse delene i koden (Lib Filen, Controllers, Models, og Views) har spesifikke oppgaver og ansvar i en webapplikasjon. Dette er en nyttig guide for å forstå hvordan koden er organisert og hvordan den fungerer sammen for å bygge en fullverdig nettside.
+
