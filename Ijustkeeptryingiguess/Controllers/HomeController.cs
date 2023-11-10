@@ -18,6 +18,7 @@ namespace Ijustkeeptryingiguess.Controllers
         {
             return View();
         }
+
         public IActionResult Sjekkliste()
         {
             var model = new CheckListViewModel();

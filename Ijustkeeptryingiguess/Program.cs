@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Ijustkeeptryingiguess.Models;
 using MySqlConnector;
 using System.Data;
+using Ijustkeeptryingiguess.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ijustkeeptryingiguess
 {
@@ -28,7 +30,14 @@ namespace Ijustkeeptryingiguess
                         // Configure the database connection.
                         var configuration = hostContext.Configuration;
                         var connectionString = configuration.GetConnectionString("DefaultConnection");
-                        services.AddScoped<IDbConnection>(_ => new MySqlConnection(connectionString));
+                       
+
+                        services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseMySql(connectionString, new MariaDbServerVersion(new Version(10, 3, 0))));
+                   
+
+
+                        services.AddScoped<IDbConnection>(_=> new MySqlConnection(connectionString));
 
                         // Register your repository here.
                         services.AddTransient<ServiceOrdreRepository>();
