@@ -20,6 +20,16 @@ CREATE TABLE IF NOT EXISTS serviceordre (
         Kunde_kommentar TEXT
 );
 
+CREATE TABLE `SalesLead` (
+        `Id` int NOT NULL AUTO_INCREMENT,
+        `FirstName` varchar(255) NOT NULL,
+        `LastName` varchar(255) NOT NULL,
+        `Mobile` varchar(255) NOT NULL,
+        `Email` varchar(255) NOT NULL,
+        `Source` varchar(255) NOT NULL,
+        PRIMARY KEY (`Id`)
+);
+
 CREATE OR REPLACE TABLE mekanisk(
     mek_id SMALLINT AUTO_INCREMENT PRIMARY KEY,
     c_lameller_slitasje VARCHAR(20),
