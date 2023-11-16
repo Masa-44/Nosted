@@ -9,6 +9,8 @@ using System.Data;
 using Ijustkeeptryingiguess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
+using Microsoft.AspNetCore.Http;
 
 namespace Ijustkeeptryingiguess
 {
@@ -19,8 +21,9 @@ namespace Ijustkeeptryingiguess
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.ConfigureServices((hostContext, services) =>
@@ -35,14 +38,14 @@ namespace Ijustkeeptryingiguess
                         // Configure the database connection.
                         var configuration = hostContext.Configuration;
                         var connectionString = configuration.GetConnectionString("DefaultConnection");
-                       
+
 
                         services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseMySql(connectionString, new MariaDbServerVersion(new Version(10, 3, 0))));
-                   
 
 
-                        services.AddScoped<IDbConnection>(_=> new MySqlConnection(connectionString));
+
+                        services.AddScoped<IDbConnection>(_ => new MySqlConnection(connectionString));
 
                         // Register your repository here.
                         services.AddTransient<ServiceOrdreRepository>();
@@ -68,7 +71,7 @@ namespace Ijustkeeptryingiguess
                         appBuilder.UseAuthentication();
                         appBuilder.UseAuthorization();
 
-                        appBuilder.MapRazorPages();
+                        
 
                         /*appBuilder.UseEndpoints(endpoints =>
                         {
@@ -86,11 +89,13 @@ namespace Ijustkeeptryingiguess
                             defaults: new { controller = "Home", action = "NyServiceOrdre" });
 
                             // Default Route
+                            endpoints.MapRazorPages();
                             endpoints.MapControllerRoute(
                                 name: "default",
                                 pattern: "{controller=Home}/{action=Index}/{id?}");
                         });
                     });
                 });
+        }
     }
 }
