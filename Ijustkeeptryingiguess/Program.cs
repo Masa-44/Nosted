@@ -8,6 +8,7 @@ using MySqlConnector;
 using System.Data;
 using Ijustkeeptryingiguess.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ijustkeeptryingiguess
 {
@@ -26,6 +27,10 @@ namespace Ijustkeeptryingiguess
                     {
                         // Add services to the container.
                         services.AddControllersWithViews();
+                        services.AddRazorPages();
+
+                        services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                        .AddEntityFrameworkStores<ApplicationDbContext>();
 
                         // Configure the database connection.
                         var configuration = hostContext.Configuration;
@@ -60,7 +65,10 @@ namespace Ijustkeeptryingiguess
                         appBuilder.UseHttpsRedirection();
                         appBuilder.UseStaticFiles();
                         appBuilder.UseRouting();
+                        appBuilder.UseAuthentication();
                         appBuilder.UseAuthorization();
+
+                        appBuilder.MapRazorPages();
 
                         /*appBuilder.UseEndpoints(endpoints =>
                         {
