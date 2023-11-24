@@ -4,7 +4,7 @@
 
 <form asp-action="Save" method="post">
     <div class="form-group">
-        <label for="SerialNumber">Serie nr:</label>
+        <label for="SerialNumber">placeholder</label>
         <input type="text" id="SerialNumber" name="SerialNumber" class="form-control" value="@Model.SerialNumber" />
     </div>
 
@@ -12,6 +12,8 @@
         <label for="Type">Type:</label>
         <input type="text" id="Type" name="Type" class="form-control" value="@Model.Type" />
     </div>
+
+    <br />
 
     <h3>Mekanisk</h3>
     <table class="table">
@@ -236,6 +238,8 @@
         <input type="text" id="Trykk settinger3" name="Trykk settinger3" class="form-control" value="" />
     </div>
 
+    <br />
+
     <h3>Funksjonstest</h3>
     <div class="form-group">
         <input type="text" id="Funksjons test1" name="Funksjons test1" class="form-control" value="Test vinsj og kjør alle funksjoner" />
@@ -244,15 +248,21 @@
         <input type="text" id="Funksjons test4" name="Funksjons test4" class="form-control" value="" />
     </div>
 
+    <br />
+
     <h3>Kommentarer</h3>
     <div class="form-group">
         <input type="text" id="Kommentarer" name="Kommentarer" class="form-control" value="" />
     </div>
 
+    <br />
+
     <h3>Dato</h3>
     <div class="form-group">
         <input type="text" id="Dato" name="Dato" class="form-control" value="" />
     </div>
+
+    <br />
 
     <h3>Signatur</h3>
     <div class="form-group">
