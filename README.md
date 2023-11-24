@@ -2,13 +2,6 @@
 
 Nosted is a webapplication project in ASP.NET for handling service orders internally at Nøsted & - Igland, for UiA BACIT Fall 2023 by Group 1/ Gruppe 1. 
 
-Some Text provided by: 
-- Trym [https://github.com/Nosp1](https://github.com/Nosp1)
-- Espen [https://github.com/espenlimi](https://github.com/espenlimi)
-- Danny Guo [https://github.com/dguo](https://github.com/dguo) through [makeareadme.com/](https://www.makeareadme.com/)
-
-Modified slightly to fit this project. 
-
 # Notice
 Please read and understand how the dockerfile works. Understand that all scripts used (build.* & startDb.*) can be run in the terminal without the scripts. We recommend getting familiar with executing docker commands in the terminal before using the scripts.
 
@@ -174,3 +167,11 @@ Dette er hvordan wwwroot-mappen bidrar til webutviklingsprosjektet, spesielt nå
 ###Views: Views er ansvarlige for å vise innholdet på skjermen for brukeren. Dette er HTML-templater som bestemmer hvordan sidene ser ut. De inneholder elementer som overskrifter (<h1>), tittelen på siden (<title>), og formateringsregler som styrer layout og utseende.
 
 ###Hver av disse delene i koden (Lib Filen, Controllers, Models, og Views) har spesifikke oppgaver og ansvar i en webapplikasjon. Dette er en nyttig guide for å forstå hvordan koden er organisert og hvordan den fungerer sammen for å bygge en fullverdig nettside.
+
+# Acknowledgements
+Some Text provided by: 
+- Trym [https://github.com/Nosp1](https://github.com/Nosp1)
+- Espen [https://github.com/espenlimi](https://github.com/espenlimi)
+- Danny Guo [https://github.com/dguo](https://github.com/dguo) through [makeareadme.com/](https://www.makeareadme.com/)
+
+Modified slightly to fit this project. 
