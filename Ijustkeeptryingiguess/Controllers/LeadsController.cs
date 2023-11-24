@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ijustkeeptryingiguess.Data;
 using Ijustkeeptryingiguess.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ijustkeeptryingiguess.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class LeadsController : Controller
     {
         private readonly ApplicationDbContext _context;

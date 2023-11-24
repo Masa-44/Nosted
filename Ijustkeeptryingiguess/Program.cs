@@ -32,7 +32,8 @@ namespace Ijustkeeptryingiguess
                         services.AddControllersWithViews();
                         services.AddRazorPages();
 
-                        services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                        services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
+                        .AddRoles<IdentityRole>()
                         .AddEntityFrameworkStores<ApplicationDbContext>();
 
                         // Configure the database connection.

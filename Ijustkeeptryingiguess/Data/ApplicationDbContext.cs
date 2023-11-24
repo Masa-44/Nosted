@@ -11,5 +11,7 @@ namespace Ijustkeeptryingiguess.Data
         }
 
         public DbSet<SalesLeadEntity> SalesLead { get; set;}
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set;}
     }
 }
