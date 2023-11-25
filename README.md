@@ -1,5 +1,5 @@
 # Nosted
-Nosted is a webapplication project in ASP.NET for handling service orders internally at Nøsted & - Igland, for UiA BACIT Fall 2023 by Group 1/ Gruppe 1. 
+Nosted is a webapplication project in ASP.NET for handling service orders internally at [Nøsted &](https://www.nosted.com/) - [Igland](https://www.nosted.com/igland), for [UiA BACIT](https://www.uia.no/studieplaner/programme/BACIT) Fall 2023 by Group 1/ Gruppe 1. 
 
 # Notice
 Please read and understand how the dockerfile works. Understand that all scripts used (build.* & startDb.*) can be run in the terminal without the scripts. We recommend getting familiar with executing docker commands in the terminal before using the scripts.
