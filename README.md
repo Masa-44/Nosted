@@ -154,7 +154,31 @@ Dette er hvor du definerer interaksjonene mellom objekter, vanligvis i form av m
 Modellene gir strukturen for dataen som skal behandles i applikasjonen. De inneholder klasser som definerer datafeltene, som fornavn, etternavn, e-postadresse osv. Modellene gjør koden mer lesbar og organisert ved å representere dataen.
 
 ### Views: 
-Views er ansvarlige for å vise innholdet på skjermen for brukeren. Dette er HTML-templater som bestemmer hvordan sidene ser ut. De inneholder elementer som overskrifter '(<h1>)', tittelen på siden '(<title>)', og formateringsregler som styrer layout og utseende.
+Views er ansvarlige for å vise innholdet på skjermen for brukeren. Dette er HTML-templater som bestemmer hvordan sidene ser ut. 
+De inneholder elementer som: 
+Overskrifter:
+```HTML
+<h1> </h1> 
+```
+Tittelen på siden:
+```HTML
+<title> </title> 
+```
+og formateringsregler som styrer layout og utseende:
+```HTML
+<style>
+        .header1 {
+            display: flex;
+            justify-content: center; /* horizontally center */
+            align-items: center;     /* vertically center (if you want) */
+        }
+    
+        .header1 h1 {
+            color: red;
+            text-align: center;      /* ensures the text itself is centered */
+        }
+    </style>
+```
 
 #### Hver av disse delene i koden (Lib Filen, Controllers, Models, og Views) har spesifikke oppgaver og ansvar i en webapplikasjon. Dette er en nyttig guide for å forstå hvordan koden er organisert og hvordan den fungerer sammen for å bygge en fullverdig nettside.
 
