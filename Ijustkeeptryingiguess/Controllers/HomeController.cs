@@ -20,6 +20,7 @@ namespace Ijustkeeptryingiguess.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Sjekkliste()
         {
             var model = new CheckListViewModel();
@@ -31,6 +32,8 @@ namespace Ijustkeeptryingiguess.Controllers
         {
             return View();
         }
+
+        [Authorize]
         public IActionResult AktiveServiceOrdre()
         {
             // Fetch data from the repository
