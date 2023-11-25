@@ -183,9 +183,14 @@ og formateringsregler som styrer layout og utseende:
 #### Hver av disse delene i koden (Lib Filen, Controllers, Models, og Views) har spesifikke oppgaver og ansvar i en webapplikasjon. Dette er en nyttig guide for å forstå hvordan koden er organisert og hvordan den fungerer sammen for å bygge en fullverdig nettside.
 
 # Acknowledgements
-Some Text provided by: 
+## Some Text provided by: 
 * Trym [https://github.com/Nosp1](https://github.com/Nosp1)
 * Espen [https://github.com/espenlimi](https://github.com/espenlimi)
 * Danny Guo [https://github.com/dguo](https://github.com/dguo) through [makeareadme.com/](https://www.makeareadme.com/)
 
-Modified slightly to fit this project. 
+## Some Code provided by:
+* Placeholder Name [placeholder.Link.view] (placeholder.link)
+* Placeholder Name [placeholder.Link.view] (placeholder.link)
+* Placeholder Name [placeholder.Link.view] (placeholder.link)
+
+### Text and code modified slightly to fit this project. 
