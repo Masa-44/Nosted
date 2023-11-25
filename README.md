@@ -187,6 +187,10 @@ og formateringsregler som styrer layout og utseende:
 * Trym [https://github.com/Nosp1](https://github.com/Nosp1)
 * Espen [https://github.com/espenlimi](https://github.com/espenlimi)
 * Danny Guo [https://github.com/dguo](https://github.com/dguo) through [makeareadme.com/](https://www.makeareadme.com/)
+* OpenAI [ChatGTP](https://chat.openai.com/)
+* Placeholder Name [placeholder.Link.view] (placeholder.link)
+* Placeholder Name [placeholder.Link.view] (placeholder.link)
+* Placeholder Name [placeholder.Link.view] (placeholder.link)
 
 ## Some Code provided by:
 * Placeholder Name [placeholder.Link.view] (placeholder.link)
