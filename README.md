@@ -1,5 +1,4 @@
 # Nosted
-
 Nosted is a webapplication project in ASP.NET for handling service orders internally at Nøsted & - Igland, for UiA BACIT Fall 2023 by Group 1/ Gruppe 1. 
 
 # Notice
@@ -10,66 +9,47 @@ Please read and understand how the dockerfile works. Understand that all scripts
 To make this work, you need to have [Docker](https://www.docker.com/) installed and running on your system.    
 
 ### Via commandline with docker (Recommended):
-> Note: On Unix and Unix-like systems (Mac and Linux) you might need to run the commands with `sudo` to make them work.
 
-##### 1. Build then start the docker container with the web application:    
+#### 1. Build then start the docker container with the web application:    
 ```C#
 docker image build -t webapp    
 docker container run --rm -it -d --name webapp --publish 80:80 webapp
 ```
-##### 2. Start a mariadb container using the localdirectory "database" to store the data:    
-
-#### Bash (Mac and Linux)
-```C#
-docker run --rm --name mariadb -p 3308:3306/tcp -v "$(pwd)/database":/var/lib/mysql -e MYSQL_ROOT_PASSWORD=12345 -d mariadb:10.5.11
-```
-
-#### Powershell (Windows)
+#### 2. Start a mariadb container using the localdirectory "database" to store the data:    
+##### Powershell (Windows)
 ```C#
 docker run --rm --name mariadb -p 3308:3306/tcp -v "%cd%\database":/var/lib/mysql -e MYSQL_ROOT_PASSWORD=12345 -d mariadb:10.5.11
 ```
 
-
-##### 3. Enter the database and create the database and table for this skeleton:    
+#### 3. Enter the database and create the database and table for this skeleton:    
 ```C#
 docker exec -it mariadb mysql -p
 ```
-
 When prompted enter the password (`12345`), then type or copy in the SQL from [this file](CreateDb.sql) (line by line).
 
-##### 4. Test out the code at http://localhost:80/
-
+#### 4. Test out the code at http://localhost:80/
 
 ### Via scripts:
 The following takes the above steps and deduce them into scripts. (all the above commands are present in the below scripts).
 The scripts allow us to build and deploy our application faster, which can be beneficial when the core concepts of using docker are understood.
 
-#### Bash (Mac and Linux)
-- Run `build.sh` to compile source code and build tomcat docker image.
-- Run `startDb.sh` to start database
-
-#### Powershell (Windows)
-- Run `build.cmd` to compile source code and build tomcat docker image.
-- Run `startDb.cmd` to start database
-
-> Note: On Unix and Unix-like systems (Mac and Linux) you might need to run the scripts with `sudo` to make them work.
-
+##### Powershell (Windows)
+* Run `build.cmd` to compile source code and build tomcat docker image.
+* Run `startDb.cmd` to start database
 
 ## Contribution
-Pull requests are welcome. For major changes, please do NOT open an issue first
-to discuss what you would like to change. This project, like most university semester projects, will likely be abondoned in near future. 
+Pull requests are welcome. For major changes, please do NOT open an issue first to discuss what you would like to change.
+This project, like most university semester projects, will likely be abondoned in near future. 
 
 Code can be copied freely. Have fun and experiment :-)
 
-
 ## Developers - Group 1/Gruppe 1: 
-- Shekina Lokoto [github.com/Shekina22](https://github.com/Shekina22)
-- Arman Mangal [github.com/arman7203](https://github.com/arman7203)
-- Jaime Segundo Oyarzun Montanares [github.com/jaimemontanares](https://github.com/jaimemontanares)
-- Sander Javier Nomedal [github.com/sanderjn1](https://github.com/sanderjn1)
-- Majd Monther Dawood Saleh [github.com/Masa-44/](https://github.com/Masa-44/)
-- Ruben Teikari [https://github.com/Mordadin](https://github.com/Mordadin)
-
+* Shekina Lokoto [github.com/Shekina22](https://github.com/Shekina22)
+* Arman Mangal [github.com/arman7203](https://github.com/arman7203)
+* Jaime Segundo Oyarzun Montanares [github.com/jaimemontanares](https://github.com/jaimemontanares)
+* Sander Javier Nomedal [github.com/sanderjn1](https://github.com/sanderjn1)
+* Majd Monther Dawood Saleh [github.com/Masa-44/](https://github.com/Masa-44/)
+* Ruben Teikari [github.com/Mordadin](https://github.com/Mordadin)
 
 # Nøsted & forenklet kodeguide. 
 
@@ -174,14 +154,14 @@ Dette er hvor du definerer interaksjonene mellom objekter, vanligvis i form av m
 Modellene gir strukturen for dataen som skal behandles i applikasjonen. De inneholder klasser som definerer datafeltene, som fornavn, etternavn, e-postadresse osv. Modellene gjør koden mer lesbar og organisert ved å representere dataen.
 
 ### Views: 
-Views er ansvarlige for å vise innholdet på skjermen for brukeren. Dette er HTML-templater som bestemmer hvordan sidene ser ut. De inneholder elementer som overskrifter ('<h1>') , tittelen på siden ('<title>') , og formateringsregler som styrer layout og utseende.
+Views er ansvarlige for å vise innholdet på skjermen for brukeren. Dette er HTML-templater som bestemmer hvordan sidene ser ut. De inneholder elementer som overskrifter '(<h1>)', tittelen på siden '(<title>)', og formateringsregler som styrer layout og utseende.
 
 #### Hver av disse delene i koden (Lib Filen, Controllers, Models, og Views) har spesifikke oppgaver og ansvar i en webapplikasjon. Dette er en nyttig guide for å forstå hvordan koden er organisert og hvordan den fungerer sammen for å bygge en fullverdig nettside.
 
 # Acknowledgements
 Some Text provided by: 
-- Trym [https://github.com/Nosp1](https://github.com/Nosp1)
-- Espen [https://github.com/espenlimi](https://github.com/espenlimi)
-- Danny Guo [https://github.com/dguo](https://github.com/dguo) through [makeareadme.com/](https://www.makeareadme.com/)
+* Trym [https://github.com/Nosp1](https://github.com/Nosp1)
+* Espen [https://github.com/espenlimi](https://github.com/espenlimi)
+* Danny Guo [https://github.com/dguo](https://github.com/dguo) through [makeareadme.com/](https://www.makeareadme.com/)
 
 Modified slightly to fit this project. 
