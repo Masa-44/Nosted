@@ -63,6 +63,9 @@ wwwroot-mappen er en spesiell mappe som spiller en betydelig rolle i å servere 
 Site.CSS inneholder oppbygningen av nettsidens layout og farger. Her finnes det blant annet Hover options som gjør at knapper på nettsiden lyser når musen kjøres over dem. Her bestemmes også høyden og bredden. Koden her definerer layouten og begrensningene på nettsiden. 
 Her styles nettsiden gjennom blant annet Nav A (Legger til farge og style for links. Eksempel: endre av farge når musa beveger seg over linken) og Nav A hover (Endrer fargen av linken til hvit når musa beveger seg over den. 
 
+![](placeholder.link/filename.png)
+Placeholder Name Bilde 
+
 ### Controllers:
 Ansvar for interaksjoner mellom objekter. Med andre ord, metoder. Metodene bestemmer hvordan et objekt skal oppføre seg, eller lage et mønster. Her kontrolleres flyten på nettsiden. Eksempel, her bestemmer du koden som gjør at en knapp fører deg fra et sted til et annet. Sjekkliste → Sjekkliste siden. 
 #### Actual eksempel:
