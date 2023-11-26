@@ -1,10 +1,15 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿// Bruker nødvendig Microsoft-namespace
+using Microsoft.AspNetCore.Identity;
 
 namespace Ijustkeeptryingiguess.Models
 {
-    public class ApplicationUser: IdentityUser
+    // Definerer en modellklasse for applikasjonsbrukere som utvider IdentityUser
+    public class ApplicationUser : IdentityUser
     {
-        public string Firstname {  get; set; }
+        // Egenskap for å lagre fornavn
+        public string Firstname { get; set; }
+
+        // Egenskap for å lagre etternavn
         public string Lastname { get; set; }
     }
 }
