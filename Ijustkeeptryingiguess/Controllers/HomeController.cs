@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Diagnostics;
 using Ijustkeeptryingiguess.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ijustkeeptryingiguess.Controllers
@@ -24,15 +25,20 @@ namespace Ijustkeeptryingiguess.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Sjekkliste()
         {
             var model = new CheckListViewModel();
             return View(model);
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult NyServiceOrdre()
         {
             return View();
         }
+
+        [Authorize]
         public IActionResult AktiveServiceOrdre()
         {
             // Fetch data from the repository

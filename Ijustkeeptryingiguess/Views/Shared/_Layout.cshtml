@@ -56,15 +56,16 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
+
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Leads" asp-action="Index">Opprett bruker</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Lager">Lager</a>
-                        </li>
-                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="AppRoles" asp-action="Index">Roles</a>
+                        </li> 
+                        <!-- <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Vaktliste">Vaktliste</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="NyServiceordre">Ny Serviceordre</a>
                         </li>
@@ -77,6 +78,7 @@
                     </ul>
                 </div>
             </div>
+            <partial name ="_LoginPartial"/>
         </nav>
     </header>
     <div class="container">
