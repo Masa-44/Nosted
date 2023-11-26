@@ -158,16 +158,16 @@ Modellene gir strukturen for dataen som skal behandles i applikasjonen. De inneh
 
 ### Views: 
 Views er ansvarlige for å vise innholdet på skjermen for brukeren. Dette er HTML-templater som bestemmer hvordan sidene ser ut. 
-De inneholder elementer som: 
-Overskrifter:
+De inneholder elementer som for eksempel: 
+##### Overskrifter:
 ```HTML
 <h1> </h1> 
 ```
-Tittelen på siden:
+##### Tittelen på siden:
 ```HTML
 <title> </title> 
 ```
-og formateringsregler som styrer layout og utseende:
+##### og formateringsregler som styrer layout og utseende:
 ```HTML
 <style>
         .header1 {
