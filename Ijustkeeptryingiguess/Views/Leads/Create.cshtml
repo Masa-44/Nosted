@@ -4,39 +4,62 @@
     ViewData["Title"] = "Create";
 }
 
+<!-- Overskrift for oppretting av salgsledelseenhet -->
 <h1>Create</h1>
 
+<!-- Underoverskrift for salgsledelseenhet -->
 <h4>SalesLeadEntity</h4>
 <hr />
+
+<!-- Opprettingsskjema i en kolonne -->
 <div class="row">
     <div class="col-md-4">
+        <!-- Skjema for å opprette en ny salgsledelseenhet -->
         <form asp-action="Create">
+            <!-- Valideringssammendrag for modellen vises her -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Felt for å skrive inn fornavn -->
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
+                <!-- Valideringsmelding for fornavn vises her -->
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
+
+            <!-- Felt for å skrive inn etternavn -->
             <div class="form-group">
                 <label asp-for="LastName" class="control-label"></label>
                 <input asp-for="LastName" class="form-control" />
+                <!-- Valideringsmelding for etternavn vises her -->
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
+
+            <!-- Felt for å skrive inn mobilnummer -->
             <div class="form-group">
                 <label asp-for="Mobile" class="control-label"></label>
                 <input asp-for="Mobile" class="form-control" />
+                <!-- Valideringsmelding for mobilnummer vises her -->
                 <span asp-validation-for="Mobile" class="text-danger"></span>
             </div>
+
+            <!-- Felt for å skrive inn e-postadresse -->
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
+                <!-- Valideringsmelding for e-postadresse vises her -->
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
+            <!-- Felt for å skrive inn kilden -->
             <div class="form-group">
                 <label asp-for="Source" class="control-label"></label>
                 <input asp-for="Source" class="form-control" />
+                <!-- Valideringsmelding for kilden vises her -->
                 <span asp-validation-for="Source" class="text-danger"></span>
             </div>
+
+            <!-- Knapp for å sende inn skjemaet -->
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -44,10 +67,15 @@
     </div>
 </div>
 
+<!-- Lenke for å gå tilbake til listen over salgsledelseenheter -->
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
+<!-- Inkluderer delvis visning for valideringsskript -->
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+

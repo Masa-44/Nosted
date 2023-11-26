@@ -2,72 +2,83 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Logg inn";
 }
 
 <h1>@ViewData["Title"]</h1>
+
+<!-- Seksjon for pålogging med lokal konto -->
 <div class="row">
     <div class="col-md-4">
         <section>
+            <!-- Skjema for pålogging med lokal konto -->
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
+                <h2>Bruk en lokal konto for å logge inn.</h2>
                 <hr />
+                <!-- Vis modellens valideringssammendrag -->
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                <!-- Inndata for e-postadresse -->
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label asp-for="Input.Email" class="form-label">Email</label>
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="navn@example.com" />
+                    <label asp-for="Input.Email" class="form-label">E-postadresse</label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
+
+                <!-- Inndata for passord -->
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label asp-for="Input.Password" class="form-label">Password</label>
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="passord" />
+                    <label asp-for="Input.Password" class="form-label">Passord</label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
+
+                <!-- Husk meg - avmerkingsboks -->
                 <div class="checkbox mb-3">
                     <label asp-for="Input.RememberMe" class="form-label">
                         <input class="form-check-input" asp-for="Input.RememberMe" />
                         @Html.DisplayNameFor(m => m.Input.RememberMe)
                     </label>
                 </div>
+
+                <!-- Logg inn-knapp -->
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Logg inn</button>
                 </div>
+
+                <!-- Andre lenker -->
                 <div>
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
+                    <p><a id="forgot-password" asp-page="./ForgotPassword">Glemt passordet ditt?</a></p>
+                    <p><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrer deg som ny bruker</a></p>
+                    <p><a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Send bekreftelsesepost på nytt</a></p>
                 </div>
             </form>
         </section>
     </div>
+
+    <!-- Seksjon for eksterne påloggingsmetoder -->
     <div class="col-md-6 col-md-offset-2">
         <section>
-            <h3>Use another service to log in.</h3>
+            <h3>Bruk en annen tjeneste for å logge inn.</h3>
             <hr />
+
+            <!-- Sjekk om eksterne påloggingsmetoder er konfigurert -->
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
+                    <!-- Ingen eksterne påloggingsmetoder er konfigurert -->
                     <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
+                        <p>Det er ingen konfigurerte eksterne påloggingstjenester. Se denne <a href="https://go.microsoft.com/fwlink/?LinkID=532715">artikkelen om hvordan du setter opp denne ASP.NET-applikasjonen for å støtte pålogging via eksterne tjenester</a>.</p>
                     </div>
                 }
                 else
                 {
+                    <!-- Vis knapper for ekstern pålogging -->
                     <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                         <div>
                             <p>
                                 @foreach (var provider in Model.ExternalLogins!)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Logg inn med din @provider.DisplayName-konto">@provider.DisplayName</button>
                                 }
                             </p>
                         </div>
@@ -78,6 +89,7 @@
     </div>
 </div>
 
+<!-- Inkluder valideringsskript -->
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

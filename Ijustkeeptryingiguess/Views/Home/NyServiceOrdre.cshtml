@@ -1,18 +1,28 @@
 ﻿@model Ijustkeeptryingiguess.Models.ServiceOrdre
+
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Tittelen på HTML-dokumentet -->
     <title>Ny Serviceordre</title>
 </head>
 <body>
+    <!-- Overskrift som viser "Ny Serviceordre" på nettsiden -->
     <h1>Ny Serviceordre</h1>
+
+    <!-- Skjema for å opprette en ny serviceordre, sender data til "PostService" metoden i "Home" controlleren ved bruk av HTTP POST -->
     <form asp-controller="Home" asp-action="PostService" method="POST">
+        <!-- Deler skjemaet i to kolonner ved bruk av flex-styling -->
         <div style="display: flex;">
+
+            <!-- Venstre kolonne med kundeinformasjon -->
             <div style="width: 50%; padding: 10px;">
+                <!-- Overskrift som viser "Kundeinformasjon" -->
                 <h2>Kundeinformasjon</h2>
+                <!-- Input-felter for kundeinformasjon inkludert ID, serienummer, navn, kontaktinformasjon, og adresse -->
                 <div class="form-group">
                     <label for="id">Id for serviceordren</label>
-                    <input type="text" id="id" name="Id" class="form-control" readonly placeholder="Auto generated">
+                    <input type="text" id="id" name="Id" class="form-control" readonly placeholder="Auto generert">
                 </div>
                 <div class="form-group">
                     <label for="serienummer">Serienummer:</label>
@@ -39,17 +49,22 @@
                     <input type="text" id="addresse" name="Addresse" class="form-control">
                 </div>
 
+                <!-- Linjeskift for bedre lesbarhet -->
                 <br />
                 <br />
 
+                <!-- Textarea-felt for å beskrive feilen i produktet -->
                 <div class="form-group">
                     <label for="feil_beskrivelse">Feil beskrivelse:</label>
                     <textarea id="feil_beskrivelse" name="Feil_beskrivelse" class="form-control" rows="4"></textarea>
                 </div>
             </div>
 
+            <!-- Høyre kolonne med serviceordreinformasjon -->
             <div style="width: 50%; padding: 10px;">
+                <!-- Overskrift som viser "Serviceordreinformasjon" -->
                 <h2>Serviceordreinformasjon</h2>
+                <!-- Input-felter for bestillingsnummer, produkttype, mottaksdato, årsmodell -->
                 <div class="form-group">
                     <label for="bestillingsnummer">Bestillingsnummer:</label>
                     <input type="text" id="bestillingsnummer" name="Bestillingsnummer" class="form-control">
@@ -62,12 +77,16 @@
                     <label for="dato">Mottatt dato:</label>
                     <input type="date" id="dato" name="Dato" class="form-control">
                 </div>
+                <!-- Input-felt for årsmodell med tilhørende flex-styling -->
                 <div class="form-group" style="display: flex;">
                     <label for="aarsmodell">Årsmodell:</label>
                     <input type="text" id="aarsmodell" name="Aarsmodell" class="form-control" style="width: 50%;">
                 </div>
+                <!-- Checkbox-felter for å indikere garanti, service, og reparasjon -->
                 <div class="form-group">
                     <label for="Garanti">Garanti:</label>
+
+
                     <input type="checkbox" id="Garanti" name="Garanti" value="true">
                 </div>
                 <div class="form-group">
@@ -78,15 +97,18 @@
                     <label for="Reparasjon">Reparasjon:</label>
                     <input type="checkbox" id="Reparasjon" name="Reparasjon" value="true">
                 </div>
+                <!-- Textarea-felt for å legge inn kommentar fra kunden -->
                 <div class="form-group">
                     <label for="kunde_kommentar">Kommentar fra kunde:</label>
                     <textarea id="kunde_kommentar" name="Kunde_kommentar" class="form-control" rows="4"></textarea>
                 </div>
+                <!-- Linjeskift for bedre visuell separasjon -->
                 <br />
+                <!-- Knapp for å sende inn skjemaet -->
                 <button type="submit" class="btn btn-primary">Opprett Serviceordre</button>
             </div>
         </div>
     </form>
-
 </body>
 </html>
+

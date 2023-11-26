@@ -4,15 +4,25 @@
     ViewData["Title"] = "Edit";
 }
 
+<!-- Overskrift for redigeringssiden -->
 <h1>Edit</h1>
 
+<!-- Visning av informasjon om salgsledelseenheten som skal redigeres -->
 <h4>SalesLeadEntity</h4>
 <hr />
+
+<!-- Skjema for å redigere informasjon om salgsledelseenheten -->
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
+
+            <!-- Valideringsoppsummering for modellen, viser feil bare for modellen -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Skjult felt for å lagre ID-en til enheten -->
             <input type="hidden" asp-for="Id" />
+
+            <!-- Skjemaelementer for hver egenskap i modellen med tilhørende valideringsfeilmeldinger -->
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -38,6 +48,8 @@
                 <input asp-for="Source" class="form-control" />
                 <span asp-validation-for="Source" class="text-danger"></span>
             </div>
+
+            <!-- Knapp for å lagre endringer -->
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -45,10 +57,15 @@
     </div>
 </div>
 
+<!-- Lenke for å gå tilbake til listen over salgsledelseenheter -->
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
+<!-- Inkludering av valideringsskript for visning av valideringsfeilmeldinger -->
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+

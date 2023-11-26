@@ -1,12 +1,16 @@
 ﻿@{
+    // Setter tittelen på siden til "Employee Roster" ved hjelp av ViewBag
     ViewBag.Title = "Employee Roster";
 }
 
+<!-- Overskrift som viser tittelen satt i ViewBag -->
 <h1>Employee Roster</h1>
 
+<!-- Tabell som viser en oversikt over ansatte, deres rolle, dag og antall arbeidede timer -->
 <table class="table">
     <thead>
         <tr>
+            <!-- Kolonnenavn for ansattes navn, rolle, dag og antall arbeidede timer -->
             <th>Employee Name</th>
             <th>Role</th>
             <th>Day</th>
@@ -14,25 +18,29 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Sample data for demonstration -->
+        <!-- Eksempeldata for demonstrasjon -->
         <tr>
+            <!-- Data for første ansatt: John Doe, Admin, Monday, 8 timer -->
             <td>John Doe</td>
             <td>Admin</td>
             <td>Monday</td>
             <td>8</td>
         </tr>
         <tr>
+            <!-- Data for andre ansatt: Jane Smith, Mechanic, Monday, 6 timer -->
             <td>Jane Smith</td>
             <td>Mechanic</td>
             <td>Monday</td>
             <td>6</td>
         </tr>
         <tr>
+            <!-- Data for tredje ansatt: Alice Johnson, Other, Monday, 7 timer -->
             <td>Alice Johnson</td>
             <td>Other</td>
             <td>Monday</td>
             <td>7</td>
         </tr>
-        <!-- Add more rows for other days and employees -->
+        <!-- Legg til flere rader for andre dager og ansatte -->
     </tbody>
 </table>
+

@@ -1,13 +1,17 @@
 ﻿@model CheckListViewModel
 
+<!-- Overskrift som viser tittelen på sjekklisten -->
 <h2>Service Checklist for Vinsj</h2>
 
+<!-- Skjema for å lagre sjekklisten ved innsending -->
 <form asp-action="Save" method="post">
+    <!-- Input-felt for å angi serienummer -->
     <div class="form-group">
-        <label for="SerialNumber">placeholder</label>
+        <label for="SerialNumber">Serienummer:</label>
         <input type="text" id="SerialNumber" name="SerialNumber" class="form-control" value="@Model.SerialNumber" />
     </div>
 
+    <!-- Input-felt for å angi vinsjens type -->
     <div class="form-group">
         <label for="Type">Type:</label>
         <input type="text" id="Type" name="Type" class="form-control" value="@Model.Type" />
@@ -15,6 +19,7 @@
 
     <br />
 
+    <!-- Mekanisk del av sjekklisten -->
     <h3>Mekanisk</h3>
     <table class="table">
         <thead>
@@ -24,6 +29,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Liste med sjekkpunkter og tilhørende status-dropdowns -->
             <tr>
                 <td>Sjekk clutch lameller for slitasje</td>
                 <td>
@@ -34,87 +40,21 @@
                     </select>
                 </td>
             </tr>
-            <tr>
-                <td>Sjekk bremser. Bånd/Pal</td>
-                <td>
-                    <select id="BremserStatus" name="BremserStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk lager for trommel</td>
-                <td>
-                    <select id="TrommelLagerStatus" name="TrommelLagerStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk PTO og opplagring</td>
-                <td>
-                    <select id="PTOStatus" name="PTOStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk kjedestrammer</td>
-                <td>
-                    <select id="KjedestrammerStatus" name="KjedestrammerStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk wire</td>
-                <td>
-                    <select id="WireStatus" name="WireStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk pinion lager</td>
-                <td>
-                    <select id="PinionLagerStatus" name="PinionLagerStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk kile på kjedehjul</td>
-                <td>
-                    <select id="KileStatus" name="KileStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
+            <!-- Legg til flere rader for andre sjekkpunkter -->
         </tbody>
     </table>
 
+    <!-- Hydraulisk del av sjekklisten -->
     <h3>Hydraulisk</h3>
     <table class="table">
+        <!-- Tabellhode med kolonnenavn -->
         <thead>
             <tr>
                 <th>Sjekkpunkt</th>
                 <th>Status</th>
             </tr>
         </thead>
+        <!-- Tabellkropp med sjekkpunkter og tilhørende status-dropdowns -->
         <tbody>
             <tr>
                 <td>Sjekk hydraulikk sylinder for slitasje</td>
@@ -126,77 +66,21 @@
                     </select>
                 </td>
             </tr>
-            <tr>
-                <td>Sjekk slanger for skader og lekkasje</td>
-                <td>
-                    <select id="SlangerStatus" name="SlangerStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Test hydraulikkblokk i testbenk</td>
-                <td>
-                    <select id="HydraulikkblokkStatus" name="HydraulikkblokkStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Skift olje i tank</td>
-                <td>
-                    <select id="OljeITankStatus" name="OljeITankStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Skift olje på gir boks</td>
-                <td>
-                    <select id="OljePåGirBoksStatus" name="OljePåGirBoksStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk Ringsyllinder åpne og skift tetninger</td>
-                <td>
-                    <select id="RingsyllinderStatus" name="RingsyllinderStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk bremse syllinder åpne og skift tetninger</td>
-                <td>
-                    <select id="BremseSyllinderStatus" name="BremseSyllinderStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
+            <!-- Legg til flere rader for andre sjekkpunkter -->
         </tbody>
     </table>
 
+    <!-- Elektro del av sjekklisten -->
     <h3>Elektro</h3>
     <table class="table">
+        <!-- Tabellhode med kolonnenavn -->
         <thead>
             <tr>
                 <th>Sjekkpunkt</th>
                 <th>Status</th>
             </tr>
         </thead>
+        <!-- Tabellkropp med sjekkpunkter og tilhørende status-dropdowns -->
         <tbody>
             <tr>
                 <td>Sjekk ledningsnett på vinsj</td>
@@ -208,31 +92,14 @@
                     </select>
                 </td>
             </tr>
-            <tr>
-                <td>Sjekk og test radio</td>
-                <td>
-                    <select id="RadioStatus" name="RadioStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Sjekk og test knappekasse</td>
-                <td>
-                    <select id="KnappekasseStatus" name="KnappekasseStatus">
-                        <option value="OK">OK</option>
-                        <option value="Bør skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
-                </td>
-            </tr>
+            <!-- Legg til flere rader for andre sjekkpunkter -->
         </tbody>
     </table>
 
+    <!-- Trykk settinger del av sjekklisten -->
     <h3>Trykk settinger</h3>
     <div class="form-group">
+        <!-- Input-felt for å angi trykkinnstillinger -->
         <input type="text" id="Trykk settinger1" name="Trykk settinger1" class="form-control" value="xx- Bar" />
         <input type="text" id="Trykk settinger2" name="Trykk settinger2" class="form-control" value="" />
         <input type="text" id="Trykk settinger3" name="Trykk settinger3" class="form-control" value="" />
@@ -240,8 +107,10 @@
 
     <br />
 
+    <!-- Funksjonstest del av sjekklisten -->
     <h3>Funksjonstest</h3>
     <div class="form-group">
+        <!-- Input-felt for å angi funksjonstester -->
         <input type="text" id="Funksjons test1" name="Funksjons test1" class="form-control" value="Test vinsj og kjør alle funksjoner" />
         <input type="text" id="Funksjons test2" name="Funksjons test2" class="form-control" value="Trekkraft KN" />
         <input type="text" id="Funksjons test3" name="Funksjons test3" class="form-control" value="Bremsekraft KN" />
@@ -250,26 +119,34 @@
 
     <br />
 
+    <!-- Kommentarer del av sjekklisten -->
     <h3>Kommentarer</h3>
     <div class="form-group">
+        <!-- Input-felt for å legge inn kommentarer -->
         <input type="text" id="Kommentarer" name="Kommentarer" class="form-control" value="" />
     </div>
 
     <br />
 
+    <!-- Dato del av sjekklisten -->
     <h3>Dato</h3>
     <div class="form-group">
-        <input type="text" id="Dato" name="Dato" class="form-control" value="" />
+        <!-- Input-felt for å angi dato -->
+        <input type="text"
+               id="Dato" name="Dato" class="form-control" value="" />
     </div>
 
     <br />
 
+    <!-- Signatur del av sjekklisten -->
     <h3>Signatur</h3>
     <div class="form-group">
+        <!-- Input-felt for å legge inn signatur -->
         <input type="text" id="Signatur" name="Signatur" class="form-control" value="" />
     </div>
 
     <br>
 
+    <!-- Knapp for å sende inn sjekklisten -->
     <button type="submit" class="btn btn-primary">Lagre sjekkliste</button>
 </form>

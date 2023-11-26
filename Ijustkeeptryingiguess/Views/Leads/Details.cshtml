@@ -4,45 +4,63 @@
     ViewData["Title"] = "Details";
 }
 
+<!-- Overskrift for detaljsiden -->
 <h1>Details</h1>
 
+<!-- Visning av informasjon om salgsledelseenheten -->
 <div>
     <h4>SalesLeadEntity</h4>
     <hr />
+
+    <!-- Definisjonslister for å vise detaljer om salgsledelseenheten -->
     <dl class="row">
-        <dt class = "col-sm-2">
+        <!-- Fornavn -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FirstName)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- Etternavn -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.LastName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.LastName)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- Mobilnummer -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Mobile)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Mobile)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- E-postadresse -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Email)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- Kilde -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Source)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Source)
         </dd>
     </dl>
 </div>
+
+<!-- Lenker for å redigere og gå tilbake til listen over salgsledelseenheter -->
 <div>
+    <!-- Lenke for å redigere enheten, med ID som en ruteparameter -->
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+
+    <!-- Lenke for å gå tilbake til listen over salgsledelseenheter -->
     <a asp-action="Index">Back to List</a>
 </div>
