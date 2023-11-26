@@ -1,5 +1,5 @@
 # Nosted
-Nosted is a webapplication project in ASP.NET for handling service orders internally at [Nøsted &](https://www.nosted.com/) - [Igland](https://www.nosted.com/igland), for [UiA BACIT](https://www.uia.no/studieplaner/programme/BACIT) Fall 2023 by Group 1/ Gruppe 1. 
+Nosted is a webapplication project in ASP.NET for handling service orders internally at [Nøsted &](https://www.nosted.com/) - [Igland](https://www.nosted.com/igland), for [UiA BACIT](https://www.uia.no/studieplaner/programme/BACIT) Fall 2023 by Group 1/ Gruppe 1.
 
 # Notice
 Please read and understand how the dockerfile works. Understand that all scripts used (build.* & startDb.*) can be run in the terminal without the scripts. We recommend getting familiar with executing docker commands in the terminal before using the scripts.
@@ -62,9 +62,6 @@ wwwroot-mappen er en spesiell mappe som spiller en betydelig rolle i å servere 
 ### Site CSS fil 
 Site.CSS inneholder oppbygningen av nettsidens layout og farger. Her finnes det blant annet Hover options som gjør at knapper på nettsiden lyser når musen kjøres over dem. Her bestemmes også høyden og bredden. Koden her definerer layouten og begrensningene på nettsiden. 
 Her styles nettsiden gjennom blant annet Nav A (Legger til farge og style for links. Eksempel: endre av farge når musa beveger seg over linken) og Nav A hover (Endrer fargen av linken til hvit når musa beveger seg over den. 
-
-![](placeholder.link/filename.png)
-Placeholder Name Bilde 
 
 ### Controllers:
 Ansvar for interaksjoner mellom objekter. Med andre ord, metoder. Metodene bestemmer hvordan et objekt skal oppføre seg, eller lage et mønster. Her kontrolleres flyten på nettsiden. Eksempel, her bestemmer du koden som gjør at en knapp fører deg fra et sted til et annet. Sjekkliste → Sjekkliste siden. 
@@ -191,13 +188,9 @@ De inneholder elementer som for eksempel:
 * Espen [https://github.com/espenlimi](https://github.com/espenlimi)
 * Danny Guo [https://github.com/dguo](https://github.com/dguo) through [makeareadme.com/](https://www.makeareadme.com/)
 * OpenAI [ChatGTP](https://chat.openai.com/)
-* Placeholder Name [placeholder.Link.view] (placeholder.link)
-* Placeholder Name [placeholder.Link.view] (placeholder.link)
-* Placeholder Name [placeholder.Link.view] (placeholder.link)
 
 ## Some Code provided by:
-* Placeholder Name [placeholder.Link.view] (placeholder.link)
-* Placeholder Name [placeholder.Link.view] (placeholder.link)
-* Placeholder Name [placeholder.Link.view] (placeholder.link)
+* Digital TechJoint [ASP.NET Identity - User Registration, Login and Log-out] ([placeholder.link](https://youtu.be/ghzvSROMo_M?si=DQTld956iFbFOENL))
+* Digital TechJoint [ASP.NET MVC - How To Implement Role Based Authorization] ([placeholder.link](https://youtu.be/qvsWwwq2ynE?si=KOt6TilFO4BmNl1F))
 
 ### Text and code modified slightly to fit this project. 
