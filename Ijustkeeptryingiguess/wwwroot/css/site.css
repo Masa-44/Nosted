@@ -2,7 +2,7 @@ body {
     background-color: white;
 }
 
-{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem calc((100wv - 1300px) / 2);
+    padding: 0rem calc((100vw - 1300px) / 2);
 }
 
 .logo {
@@ -32,9 +32,9 @@ nav a {
     padding: 0 1.5rem;
 }
 
-    nav a:hover {
-        color: #ffffff
-    }
+nav a:hover {
+    color: #ffffff;
+}
 
 .hero {
     background: #ffd800;
@@ -44,30 +44,29 @@ nav a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 95vh;
-    padding: 3rem calc((100wv - 1300px) / 2);
+    padding: 3rem calc((100vw - 1300px) / 2);
 }
 
 .column-left {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Vertically space the buttons */
-    align-items: center; /* Horizontally center the buttons */
+    justify-content: space-between;
+    align-items: center;
     color: #000000;
-    padding: 2rem; /* Increase padding for spacing */
+    padding: 2rem;
     text-align: center;
 }
 
-    .column-left h1 {
-        margin-bottom: 1rem;
-        font-size: 3rem;
-    }
+.column-left h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
 
-
-    .column-left p {
-        margin-bottom: 2rem;
-        font-size: 1.5rem;
-        line-height: 1.5;
-    }
+.column-left p {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
 
 button {
     padding: 1rem 3rem;
@@ -79,10 +78,10 @@ button {
     border-radius: 50px;
 }
 
-    button:hover {
-        background: #ffffff;
-        color: #000000;
-    }
+button:hover {
+    background: #ffffff;
+    color: #000000;
+}
 
 .column-right {
     display: flex;
