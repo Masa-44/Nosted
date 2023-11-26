@@ -1,8 +1,11 @@
 ﻿<environment include="Development">
+    <!-- Utviklingsmiljø: Bruk lokale versjoner av jQuery Validation-skript -->
     <script src="~/Identity/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 </environment>
+
 <environment exclude="Development">
+    <!-- Produksjonsmiljø: Bruk CDN for jQuery Validation-skript med fallback til lokale kopier -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"
             asp-fallback-src="~/Identity/lib/jquery-validation/dist/jquery.validate.min.js"
             asp-fallback-test="window.jQuery && window.jQuery.validator"

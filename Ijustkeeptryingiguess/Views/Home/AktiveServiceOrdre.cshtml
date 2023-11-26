@@ -7,8 +7,10 @@
     <title>Aktive Serviceordre</title>
 </head>
 <body>
+    <!-- Oppretter en HTML-tabell for å vise listen over aktive serviceordre -->
     <table class="table">
         <thead>
+            <!-- Definerer tabellhodene med relevante kolonnenavn -->
             <tr>
                 <th>Id</th>
                 <th>Serienummer</th>
@@ -24,13 +26,15 @@
                 <th>Årsmodell</th>
                 <th>Garanti</th>
                 <th>Service</th>
-                <th>Reperasjon</th>
+                <th>Reparasjon</th>
                 <th>Kommentar fra kunde</th>
             </tr>
         </thead>
         <tbody>
+            <!-- Bruker en foreach-løkke for å gjennomgå hvert ServiceOrdre-objekt i modellen -->
             @foreach (var serviceordre in Model)
             {
+                <!-- Oppretter en rad for hvert ServiceOrdre-objekt med relevante data fra modellen -->
                 <tr>
                     <td>@serviceordre.Id</td>
                     <td>@serviceordre.Serienummer</td>
@@ -48,10 +52,11 @@
                     <td>@serviceordre.Service</td>
                     <td>@serviceordre.Reparasjon</td>
                     <td>@serviceordre.Kunde_kommentar</td>
-                    </tr>
+                </tr>
             }
         </tbody>
     </table>
 </body>
 </html>
+
 

@@ -1,29 +1,49 @@
 ﻿@{
+    // Setter tittelen som vises øverst i dokumentet til "Storage Overview"
     ViewBag.Title = "Storage Overview";
 }
 
-<h1>Storage Overview</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metainformasjon for HTML-dokumentet, inkludert tegnsett og visningsinnstillinger -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tittel for dokumentet hentes fra ViewBag.Title -->
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!-- Overskriftselementet som viser teksten "Storage Overview" på nettsiden -->
+    <h1>Storage Overview</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Product Name</th>
-            <th>Quantity</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Product A</td>
-            <td>100</td>
-        </tr>
-        <tr>
-            <td>Product B</td>
-            <td>75</td>
-        </tr>
-        <tr>
-            <td>Product C</td>
-            <td>50</td>
-        </tr>
-        <!-- Add more rows for other products -->
-    </tbody>
-</table>
+    <!-- HTML-tabell som viser lagringsinformasjon for ulike produkter -->
+    <table class="table">
+        <!-- Tabellhode med kolonnenavn "Product Name" og "Quantity" -->
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <!-- Tabellkropp som inneholder data om produkter og antall -->
+        <tbody>
+            <!-- Første rad med produktinformasjon: "Product A" og mengden "100" -->
+            <tr>
+                <td>Product A</td>
+                <td>100</td>
+            </tr>
+            <!-- Andre rad med produktinformasjon: "Product B" og mengden "75" -->
+            <tr>
+                <td>Product B</td>
+                <td>75</td>
+            </tr>
+            <!-- Tredje rad med produktinformasjon: "Product C" og mengden "50" -->
+            <tr>
+                <td>Product C</td>
+                <td>50</td>
+            </tr>
+            <!-- Legg til flere rader for andre produkter om nødvendig -->
+        </tbody>
+    </table>
+</body>
+</html>

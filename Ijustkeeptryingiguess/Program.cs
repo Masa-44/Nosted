@@ -18,9 +18,11 @@ namespace Ijustkeeptryingiguess
     {
         public static void Main(string[] args)
         {
+            // Starter webapplikasjonen
             CreateHostBuilder(args).Build().Run();
         }
 
+        // Konfigurerer webverten
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
@@ -28,27 +30,29 @@ namespace Ijustkeeptryingiguess
                 {
                     webBuilder.ConfigureServices((hostContext, services) =>
                     {
-                        // Add services to the container.
+                        // Legger til nødvendige tjenester i kontaineren
+
+                        // Legger til kontroller- og Razor Pages-tjenester
                         services.AddControllersWithViews();
                         services.AddRazorPages();
 
+                        // Legger til Identity-tjenester med MySQL som databackend
                         services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
-                        .AddRoles<IdentityRole>()
-                        .AddEntityFrameworkStores<ApplicationDbContext>();
+                        .AddRoles<IdentityRole>() // Legger til roller i Identity
+                        .AddEntityFrameworkStores<ApplicationDbContext>(); // Konfigurerer Entity Framework med ApplicationDbContext
 
-                        // Configure the database connection.
+                        // Konfigurerer databaseforbindelsen
                         var configuration = hostContext.Configuration;
                         var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-
+                        // Legger til DbContext med MySQL
                         services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseMySql(connectionString, new MariaDbServerVersion(new Version(10, 3, 0))));
+                            options.UseMySql(connectionString, new MariaDbServerVersion(new Version(10, 3, 0))));
 
-
-
+                        // Legger til en enkeltstående databaseforbindelse for Dependency Injection
                         services.AddScoped<IDbConnection>(_ => new MySqlConnection(connectionString));
 
-                        // Register your repository here.
+                        // Registrerer repositoryet
                         services.AddTransient<ServiceOrdreRepository>();
                     });
 
@@ -56,13 +60,15 @@ namespace Ijustkeeptryingiguess
                     {
                         var env = appBuilder.ApplicationServices.GetRequiredService<IWebHostEnvironment>();
 
+                        // Konfigurerer middleware-avhengig av miljø
+
                         if (env.IsDevelopment())
                         {
-                            appBuilder.UseDeveloperExceptionPage();
+                            appBuilder.UseDeveloperExceptionPage(); // Bruk feilside i utviklingsmiljø
                         }
                         else
                         {
-                            appBuilder.UseExceptionHandler("/Home/Error");
+                            appBuilder.UseExceptionHandler("/Home/Error"); // Bruk feilside i produksjonsmiljø
                             appBuilder.UseHsts();
                         }
 
@@ -72,25 +78,20 @@ namespace Ijustkeeptryingiguess
                         appBuilder.UseAuthentication();
                         appBuilder.UseAuthorization();
 
-                        
-
-                        /*appBuilder.UseEndpoints(endpoints =>
-                        {
-                            endpoints.MapControllerRoute(
-                                name: "default",
-                                pattern: "{controller=Home}/{action=Index}/{id?}");
-                        });*/
+                        // Konfigurerer sluttpunkter og ruter
 
                         appBuilder.UseEndpoints(endpoints =>
                         {
-                            // Custom Route
+                            // Tilpasset rute for en spesifikk handling
                             endpoints.MapControllerRoute(
-                            name: "customRoute",
-                            pattern: "custom/nyserviceordre", // Adjust the route pattern to your needs
-                            defaults: new { controller = "Home", action = "NyServiceOrdre" });
+                                name: "customRoute",
+                                pattern: "custom/nyserviceordre", // Juster rute-mønsteret etter behov
+                                defaults: new { controller = "Home", action = "NyServiceOrdre" });
 
-                            // Default Route
+                            // Standard Razor Pages-rute
                             endpoints.MapRazorPages();
+
+                            // Standard kontroller-rute
                             endpoints.MapControllerRoute(
                                 name: "default",
                                 pattern: "{controller=Home}/{action=Index}/{id?}");

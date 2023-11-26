@@ -3,23 +3,27 @@
     ViewData["Title"] = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<!-- Feilsidemal -->
+<h1 class="text-danger">Feil.</h1>
+<h2 class="text-danger">Det oppstod en feil under behandlingen av forespørselen.</h2>
 
+<!-- Viser Request ID hvis tilgjengelig -->
 @if (Model.ShowRequestId)
 {
     <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        <strong>Forespørsels-ID:</strong> <code>@Model.RequestId</code>
     </p>
 }
 
-<h3>Development Mode</h3>
+<!-- Utviklermodusinformasjon -->
+<h3>Utviklermodus</h3>
 <p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    Å bytte til <strong>Utvikler</strong>-miljøet vil vise mer detaljert informasjon om feilen som oppstod.
 </p>
 <p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
+    <strong>Utviklermiljøet bør ikke være aktivert for distribuerte applikasjoner.</strong>
+    Det kan føre til visning av sensitiv informasjon fra unntak til sluttbrukere.
+    For lokal feilsøking, aktiver <strong>Utvikler</strong>-miljøet ved å sette miljøvariabelen <strong>ASPNETCORE_ENVIRONMENT</strong> til <strong>Development</strong>
+    og start appen på nytt.
 </p>
+

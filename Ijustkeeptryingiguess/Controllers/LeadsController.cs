@@ -9,20 +9,26 @@ using Ijustkeeptryingiguess.Data;
 using Ijustkeeptryingiguess.Models;
 using Microsoft.AspNetCore.Authorization;
 
+
 namespace Ijustkeeptryingiguess.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
+    // Kontrollerklasse for ledelsesfunksjoner knyttet til Leads
     public class LeadsController : Controller
     {
+        // Databasekontekst for å samhandle med databasen
         private readonly ApplicationDbContext _context;
 
+        // Konstruktør som injiserer databasenkontekst
         public LeadsController(ApplicationDbContext context)
         {
             _context = context;
         }
+    
 
-        // Denne koden tillater flere koder å kjøre samtidig gjennom async. Her kan flere metoder kjøres samtidig uten å vente i en sekvens
-        public async Task<IActionResult> Index()
+
+// Denne koden tillater flere koder å kjøre samtidig gjennom async. Her kan flere metoder kjøres samtidig uten å vente i en sekvens
+public async Task<IActionResult> Index()
         {
             // sjekker om databasen saleslead ikke er 0
               return _context.SalesLead != null ? 

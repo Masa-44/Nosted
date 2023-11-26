@@ -1,11 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadata for character set and viewport -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title for the page -->
     <title>@ViewData["Title"] - Ijustkeeptryingiguess</title>
+
+    <!-- External stylesheets for Bootstrap and custom styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true">
+
+    <!-- Internal styles for the page -->
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
@@ -20,16 +27,16 @@
 
         .navbar-brand {
             font-weight: 600;
-            color: #007BFF;
+            color: #007BFF; /* Blue color for brand */
         }
 
         .navbar-nav .nav-link {
             font-weight: 500;
-            color: #fff; /* Light text color */
+            color: #fff; /* Light text color for links */
         }
 
             .navbar-nav .nav-link:hover {
-                color: #007BFF;
+                color: #007BFF; /* Blue color on hover */
             }
 
         .container {
@@ -40,53 +47,54 @@
             margin-top: 20px;
         }
 
-       .id {
-            background-color: #3E3F40;
-       }
+        .id {
+            background-color: #3E3F40; /* Dark color for the 'id' class */
+        }
     </style>
 </head>
 <body>
+    <!-- Header section with navigation bar -->
     <header>
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
+                <!-- Brand link with routing information -->
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Nøsted &</a>
+
+                <!-- Toggle button for small screens -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Navigation links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Leads" asp-action="Index">Opprett bruker</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="AppRoles" asp-action="Index">Roles</a>
-                        </li> 
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Vaktliste">Vaktliste</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="NyServiceordre">Ny Serviceordre</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AktiveServiceOrdre">Aktive Serviceordre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Sjekkliste">Sjekkliste</a>
-                        </li>
+                        <!-- Additional navigation links commented out -->
                     </ul>
                 </div>
             </div>
-            <partial name ="_LoginPartial"/>
+            <!-- Partial for login information -->
+            <partial name="_LoginPartial" />
         </nav>
     </header>
+
+    <!-- Main content container -->
     <div class="container">
+        <!-- Render body content -->
         @RenderBody()
     </div>
 
+    <!-- Optional section for scripts -->
     @RenderSection("Scripts", required: false)
 
+    <!-- Bootstrap JavaScript bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
